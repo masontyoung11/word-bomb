@@ -12,8 +12,12 @@ category_counts = {'beginner': 0, 'intermediate': 0, 'advanced': 0}
 
 def categorize_word(word: str) -> str:
     if len(word) <= 5:
+        if '_' in word:
+            return 'advanced'
         return 'beginner'
-    elif 6 <= len(word) <= 8:
+    elif 6 <= len(word) <= 10:
+        if '_' in word:
+            return 'advanced'
         return 'intermediate'
     else:
         return 'advanced'
